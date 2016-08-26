@@ -15,5 +15,13 @@ class GetTimes_Model extends CI_Model {
 
 		return $strSQL->result(); 
 	}
+
+	public function getFotoTime($idTime) {
+
+		$strSQL = 'SELECT foto from '.$this->getTable().' WHERE idTime = '.$idTime.'';
+		$objResult = $this->db->query($strSQL);
+
+		return $objResult->result();
+	}
 	
 }

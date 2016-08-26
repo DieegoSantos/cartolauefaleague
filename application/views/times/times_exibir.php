@@ -16,6 +16,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                                             <th>Nome Time</th>
                                             <th>Nome Cartoleiro</th>
                                             <th>Tipo Inscrição</th>
+                                            <th>Ações</th>
                                         </tr>
                                     </thead>
                                     <tbody>
@@ -23,7 +24,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                                     foreach ($objDados as $objResult):
                                     ?>
                                         <tr>
-                                            <td><?php echo $objResult->idTimes ?></td>
+                                            <td><?php echo $objResult->idTime ?></td>
                                             <td><img src="<?php echo base_url('uploads/'.$objResult->foto) ?>" width="30" /><?php echo $objResult->nomeTime ?></td>
                                             <td><?php echo $objResult->nomeUser ?></td>
                                             <?php
@@ -35,10 +36,14 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                                                     $strInscricao = 'Anual e Mensal';
                                             ?>
                                             <td><?php echo $strInscricao ?></td>
+                                            <td>
+                                                <a href="#" class="btn btn-warning">Editar</a>
+                                                <a href="<?php echo base_url('index.php/Times/inserirPontuacao?idtime='.$objResult->idTime) ?>" class="btn btn-success">Inserir Pontuação</a>
+                                            </td>
                                         </tr>
                                     <?php endforeach; ?>
                                     <tr>
-                                        <td colspan="4"><a href="<?php echo base_url('index.php/Times/addTime') ?>" class="btn btn-primary">Novo Time</a></td>
+                                        <td colspan="5"><a href="<?php echo base_url('index.php/Times/addTime') ?>" class="btn btn-primary">Novo Time</a></td>
                                     </tr>
                                     </tbody>
                                 </table>
