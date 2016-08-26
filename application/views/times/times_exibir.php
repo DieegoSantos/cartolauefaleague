@@ -4,9 +4,27 @@ defined('BASEPATH') OR exit('No direct script access allowed');
     <div id="page-wrapper">
         <div class="container-fluid">
             <div class="row">
+                <h3 class="page-header">Times Cadastrados</h3>
                 <div class="col-lg-13">
-                	<h3 class="page-header">Times Cadastrados</h3>
-                    <div class="panel panel-default">
+                    <form method="get" action="<?php echo base_url('index.php/Times/listaTimes') ?>">
+                        <table style="margin-bottom:20px;">
+                            <tr>
+                                <td>Exibir Times :</td>
+                                <td>
+                                    <select class="form-control">
+                                        <option value=""><< Todos >></option>
+                                        <option value="A">Anual</option>
+                                        <option value="M">Mensal</option>
+                                    </select>
+                                </td>
+                            </tr> 
+                        </table>
+                    </form>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-13">
+                	<div class="panel panel-default">
                         <div class="panel-body">
                             <div class="table-responsive">
                                 <table class="table table-bordered table-hover">

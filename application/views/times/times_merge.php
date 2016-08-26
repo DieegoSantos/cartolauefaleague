@@ -26,7 +26,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 						</fieldset>
 						<fieldset class="form-group">
 					    	<label for="exampleInputPassword1">Escudo(*)</label>
-					    	<input required autofocus name="ESCUDO" type="file" class="form-control" />
+					    	<input autofocus name="ESCUDO" type="file" class="form-control" />
 						</fieldset>
 						<button type="submit" class="btn btn-primary">Cadastrar</button>
 					</form>

@@ -10,7 +10,16 @@ class GetTimes_Model extends CI_Model {
 		return 'tbltimes';
 	}
 
-	public function getListTimes() {
+	public function getListTimes(array $arrWhere = array()) {
+
+		if($arrWhere) {
+			$arrWhereAux = array();
+			foreach($arrWhere as $intKey => $strValue) {
+				$arrWhereAux[$intKey] = array($intKey => $strValue);
+				$this->db->where($arrWhereAux[$intKey]);
+			}
+		}
+
 		$strSQL = $this->db->get($this->getTable());
 
 		return $strSQL->result(); 
