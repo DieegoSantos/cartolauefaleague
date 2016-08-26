@@ -33,6 +33,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                                 <th>Nome Cartoleiro</th>
                                 <th>Pontuação</th>
                                 <th>Rodada</th>
+                                <th>Ações</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -42,6 +43,9 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                                 <td><?php echo $objResult->nomeUser?></td>
                                 <td><?php echo $objResult->pontuacao?></td>
                                 <td><?php echo $objResult->mesPontuacao?></td>
+                                <td>
+                                	<a href="" class="btn btn-success">Editar Pontuação</a>
+                                </td>
                             </tr>
                         <?php endforeach; ?>
                         <tr>

@@ -15,6 +15,32 @@ CREATE DATABASE IF NOT EXISTS `cartolauefaleague` /*!40100 DEFAULT CHARACTER SET
 USE `cartolauefaleague`;
 
 
+-- Copiando estrutura para tabela cartolauefaleague.tblpagamentos
+CREATE TABLE IF NOT EXISTS `tblpagamentos` (
+  `idTime` int(11) DEFAULT NULL,
+  `datPagamento` date DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+-- Copiando dados para a tabela cartolauefaleague.tblpagamentos: ~0 rows (aproximadamente)
+/*!40000 ALTER TABLE `tblpagamentos` DISABLE KEYS */;
+/*!40000 ALTER TABLE `tblpagamentos` ENABLE KEYS */;
+
+
+-- Copiando estrutura para tabela cartolauefaleague.tblperfil
+CREATE TABLE IF NOT EXISTS `tblperfil` (
+  `id_perfil` int(11) NOT NULL AUTO_INCREMENT,
+  `nom_perfil` varchar(45) DEFAULT NULL,
+  `status` int(11) DEFAULT NULL,
+  PRIMARY KEY (`id_perfil`)
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=latin1;
+
+-- Copiando dados para a tabela cartolauefaleague.tblperfil: ~0 rows (aproximadamente)
+/*!40000 ALTER TABLE `tblperfil` DISABLE KEYS */;
+INSERT INTO `tblperfil` (`id_perfil`, `nom_perfil`, `status`) VALUES
+	(1, 'Admnistrador', 1);
+/*!40000 ALTER TABLE `tblperfil` ENABLE KEYS */;
+
+
 -- Copiando estrutura para tabela cartolauefaleague.tblpontuacao
 CREATE TABLE IF NOT EXISTS `tblpontuacao` (
   `idPontuacao` int(11) NOT NULL AUTO_INCREMENT,
@@ -22,13 +48,12 @@ CREATE TABLE IF NOT EXISTS `tblpontuacao` (
   `pontuacao` decimal(5,2) NOT NULL,
   `mesPontuacao` date NOT NULL,
   PRIMARY KEY (`idPontuacao`)
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=latin1;
 
 -- Copiando dados para a tabela cartolauefaleague.tblpontuacao: ~1 rows (aproximadamente)
 /*!40000 ALTER TABLE `tblpontuacao` DISABLE KEYS */;
 INSERT INTO `tblpontuacao` (`idPontuacao`, `idTime`, `pontuacao`, `mesPontuacao`) VALUES
-	(1, 1, 105.10, '2016-08-26'),
-	(2, 1, 105.10, '2016-08-26');
+	(1, 1, 105.10, '2016-08-26');
 /*!40000 ALTER TABLE `tblpontuacao` ENABLE KEYS */;
 
 
@@ -49,15 +74,22 @@ INSERT INTO `tbltimes` (`idTime`, `nomeTime`, `nomeUser`, `foto`, `tipoInscricao
 /*!40000 ALTER TABLE `tbltimes` ENABLE KEYS */;
 
 
--- Copiando estrutura para tabela cartolauefaleague.tbmpagamentos
-CREATE TABLE IF NOT EXISTS `tbmpagamentos` (
-  `idTime` int(11) DEFAULT NULL,
-  `datPagamento` date DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+-- Copiando estrutura para tabela cartolauefaleague.tblusuarios
+CREATE TABLE IF NOT EXISTS `tblusuarios` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `nome` varchar(255) DEFAULT NULL,
+  `login` varchar(255) NOT NULL,
+  `senha` varchar(255) NOT NULL,
+  `id_perfil` int(9) DEFAULT '1',
+  `status` int(11) DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=18 DEFAULT CHARSET=latin1;
 
--- Copiando dados para a tabela cartolauefaleague.tbmpagamentos: ~0 rows (aproximadamente)
-/*!40000 ALTER TABLE `tbmpagamentos` DISABLE KEYS */;
-/*!40000 ALTER TABLE `tbmpagamentos` ENABLE KEYS */;
+-- Copiando dados para a tabela cartolauefaleague.tblusuarios: ~0 rows (aproximadamente)
+/*!40000 ALTER TABLE `tblusuarios` DISABLE KEYS */;
+INSERT INTO `tblusuarios` (`id`, `nome`, `login`, `senha`, `id_perfil`, `status`) VALUES
+	(1, 'Cartola ADM', 'adm@cartolauefaleague.com.br', 'cartolaadm', 1, 1);
+/*!40000 ALTER TABLE `tblusuarios` ENABLE KEYS */;
 /*!40101 SET SQL_MODE=IFNULL(@OLD_SQL_MODE, '') */;
 /*!40014 SET FOREIGN_KEY_CHECKS=IF(@OLD_FOREIGN_KEY_CHECKS IS NULL, 1, @OLD_FOREIGN_KEY_CHECKS) */;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
