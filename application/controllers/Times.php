@@ -1,7 +1,13 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-class Times extends CI_Controller {
+class Times extends MY_Controller {
+
+        public function listaTimes() {
+                $this->load->model('GetTimes_Model');
+                $arrDados['objDados'] = $this->GetTimes_Model->getListTimes();
+                $this->load->view('times/times_exibir', $arrDados);
+        }
 
 	
 	public function addTime() {
@@ -27,13 +33,16 @@ class Times extends CI_Controller {
 
         $strTime = $this->input->post('NOM_TIME');
         $strNome = $this->input->post('NOME');
+        $strInscricao = $this->input->post('TIPO_INSC');
 
         $arrDados = array();
         $arrDados['nomeTime'] = $strTime;
         $arrDados['nomeUser'] = $strNome;
+        $arrDados['tipoInscricao'] = $strInscricao;
         $arrDados['foto'] = $strFoto;
 
-        $this->db->insert('tbltimes', $arrDados);
+        if($this->db->insert('tbltimes', $arrDados))
+                redirect(base_url('index.php/Times/listaTimes'));
 
 	}
 }

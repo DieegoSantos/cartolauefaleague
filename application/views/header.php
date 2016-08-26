@@ -71,22 +71,22 @@
             <div class="collapse navbar-collapse navbar-ex1-collapse">
                 <ul class="nav navbar-nav side-nav">
                     <li class="active">
-                        <a href="index.html"><i class="fa fa-fw fa-dashboard"></i> Times</a>
+                        <a href="<?php echo base_url('index.php/Times/listaTimes')?>"><i class="fa fa-fw fa-dashboard"></i> Times</a>
                     </li>
                     <li>
-                        <a href="forms.html"><i class="fa fa-fw fa-money"></i> Pagamentos</a>
+                        <a href="#"><i class="fa fa-fw fa-money"></i> Pagamentos</a>
                     </li>
                     <li>
                         <a href="javascript:;" data-toggle="collapse" data-target="#demo"><i class="fa fa-fw fa-table"></i> Classificações <i class="fa fa-fw fa-caret-down"></i></a>
                         <ul id="demo" class="collapse">
                             <li>
-                                <a href="<?php echo base_url('Classificacao/rodada')?>">Rodada</a>
+                                <a href="<?php echo base_url('index.php/Classificacao/rodada')?>">Rodada</a>
                             </li>
                             <li>
-                                <a href="<?php echo base_url('Classificacao/mensal')?>">Mensal</a>
+                                <a href="<?php echo base_url('index.php/Classificacao/mensal')?>">Mensal</a>
                             </li>
                             <li>
-                                <a href="<?php echo base_url('Classificacao/anual')?>">Anual</a>
+                                <a href="<?php echo base_url('index.php/Classificacao/anual')?>">Anual</a>
                             </li>
                             
                         </ul>
