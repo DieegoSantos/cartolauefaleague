@@ -18,7 +18,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 				<div class="col-lg-4">
 					<?php foreach ($objFoto as $strFoto): ?>
 						<p align="center" style="margin-top:30px;">
-							<img src="<?php echo base_url('uploads/'.$strFoto->foto.'') ?>" width="200" />
+							<img src="<?php echo $strFoto->foto?>" width="200" />
 						</p>
 					<?php endforeach; ?>					
 				</div>

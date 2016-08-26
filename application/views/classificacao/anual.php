@@ -22,14 +22,19 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                                         </tr>
                                     </thead>
                                     <tbody>
-                                    <?php for($i=1; $i<=25; $i++) :?>
+                                    <?php
+                                    $intCont = 1;
+                                    foreach($objDados as $objResult) :?>
                                         <tr>
-                                            <td><?php echo $i ?>°</td>
-                                            <td>F.C Santástico 2016</td>
-                                            <td>Diego</td>
-                                            <td>180,80</td>
+                                            <td><?php echo $intCont ?>°</td>
+                                            <td><?php echo $objResult->nomeTime ?></td>
+                                            <td><?php echo $objResult->nomeUser ?></td>
+                                            <td><?php echo $objResult->pontuacao ?></td>
                                         </tr>
-                                    <?php endfor; ?>
+                                    <?php
+                                        $intCont++;
+                                    endforeach;
+                                    ?>
                                     </tbody>
                                 </table>
                             </div>                           

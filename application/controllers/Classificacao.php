@@ -12,6 +12,9 @@ class Classificacao extends MY_Controller {
 	}
 
 	public function anual() {
-		$this->load->view('classificacao/anual');
+		$this->load->model('GetPontuacao_Model');
+
+		$arrDados['objDados'] = $this->GetPontuacao_Model->getClassificacaoAnual();
+		$this->load->view('classificacao/anual', $arrDados);
 	}
 }
