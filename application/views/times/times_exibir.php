@@ -11,7 +11,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                             <tr>
                                 <td>Exibir Times :</td>
                                 <td>
-                                    <select class="form-control">
+                                    <select name="TIPO_TIME" class="form-control">
                                         <option value=""><< Todos >></option>
                                         <option value="A">Anual</option>
                                         <option value="M">Mensal</option>
