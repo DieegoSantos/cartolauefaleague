@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="CARTOLA UEFA LEAGUE - ADMIN">
     <meta name="author" content="Diego Santos">
-    <title>SB Admin - Bootstrap Admin Template</title>
+    <title>Cartola Uefa League</title>
     <!-- Bootstrap Core CSS -->
     <link href="<?php echo base_url('css/bootstrap.min.css')?>" rel="stylesheet">
     <!-- Custom CSS -->
@@ -44,12 +44,12 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="index.html">SB Admin</a>
+                <a class="navbar-brand" href="<?php echo base_url() ?>">Cartola Uefa League</a>
             </div>
             <!-- Top Menu -->
             <ul class="nav navbar-right top-nav">
                 <li class="dropdown">
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-user"></i> Diego Santos <b class="caret"></b></a>
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-user"></i> Adminstrador <b class="caret"></b></a>
                     <ul class="dropdown-menu">
                         <li>
                             <a href="<?php echo base_url('index.php/Login/logout') ?>"><i class="fa fa-fw fa-power-off"></i> Log Out</a>

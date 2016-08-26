@@ -24,7 +24,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 				</div>
 			</div>
 			<div class="row">
-				<div class="col-lg-12">
+				<div class="col-lg-8">
 					<h3 class="page-header"> Pontuações Cadastradas</h3>
 					<table class="table table-bordered table-hover">
                         <thead>
