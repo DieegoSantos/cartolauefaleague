@@ -40,6 +40,7 @@ class GetPontuacao_Model extends CI_Model {
 					SELECT  T.idTime,
 							T.nomeTime,
 							T.nomeUser,
+							T.foto,
 							P.pontuacao
 					FROM '.$this->getTable().' P
 					INNER JOIN tbltimes T ON T.idTime = P.idTime

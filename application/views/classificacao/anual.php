@@ -27,7 +27,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                                     foreach($objDados as $objResult) :?>
                                         <tr>
                                             <td><?php echo $intCont ?>°</td>
-                                            <td><?php echo $objResult->nomeTime ?></td>
+                                            <td><img src="<?php echo $objResult->foto ?>" width="30" /><?php echo $objResult->nomeTime ?></td>
                                             <td><?php echo $objResult->nomeUser ?></td>
                                             <td><?php echo $objResult->pontuacao ?></td>
                                         </tr>
