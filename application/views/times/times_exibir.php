@@ -17,6 +17,9 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                                         <option value="M">Mensal</option>
                                     </select>
                                 </td>
+                                <td>
+                                    <input type="submit" class="btn btn-success" value="FILTRAR" />
+                                </td>
                             </tr> 
                         </table>
                     </form>
@@ -48,7 +51,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                                             <?php
                                                 if($objResult->tipoInscricao == 'A')
                                                     $strInscricao = 'Anual';
-                                                elseif($objResult == 'M')
+                                                elseif($objResult->tipoInscricao == 'M')
                                                     $strInscricao = 'Mensal';
                                                 else
                                                     $strInscricao = 'Anual e Mensal';

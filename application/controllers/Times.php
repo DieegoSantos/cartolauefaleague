@@ -6,7 +6,7 @@ class Times extends MY_Controller {
         public function listaTimes() {
 
                 $strTipo = $this->input->get('TIPO_TIME');
-                $arrWhere = array()
+                $arrWhere = array();
                 if($strTipo)
                         $arrWhere['tipoInscricao'] = $strTipo;
 
