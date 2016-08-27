@@ -20,6 +20,28 @@ class Times extends MY_Controller {
 		$this->load->view('times/times_merge');
 	}
 
+        public function editTime() {
+                $this->load->model('GetTimes_Model');
+
+                $intCodTime = $this->input->get('idtime');
+                $arrWhere = array();
+                if($intCodTime)
+                        $arrWhere['idTime'] = $intCodTime;
+
+                $objTimes = $this->GetTimes_Model->getListTimes($arrWhere);
+                $arrDados = array();
+                foreach ($objTimes as $objResult) {
+                        $arrDados['idTime'] = $objResult->idTime;
+                        $arrDados['nomeTime'] = $objResult->nomeTime;
+                        $arrDados['nomeUser'] = $objResult->nomeUser;
+                        $arrDados['tipoInscricao'] = $objResult->tipoInscricao;
+                        $arrDados['fotos'] = $objResult->foto;
+
+                }
+
+                $this->load->view('times/times_merge', $arrDados);
+        }
+
 	public function saveTime() {
 
                 if($this->input->post('ESCUDO')) {

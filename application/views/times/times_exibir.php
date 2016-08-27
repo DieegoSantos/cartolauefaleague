@@ -58,7 +58,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                                             ?>
                                             <td><?php echo $strInscricao ?></td>
                                             <td>
-                                                <a href="#" class="btn btn-warning">Editar</a>
+                                                <a href="<?php echo base_url('index.php/Times/editTime?idtime='.$objResult->idTime) ?>" class="btn btn-warning">Editar</a>
                                                 <a href="<?php echo base_url('index.php/Times/inserirPontuacao?idtime='.$objResult->idTime) ?>" class="btn btn-success">Inserir Pontuação</a>
                                             </td>
                                         </tr>

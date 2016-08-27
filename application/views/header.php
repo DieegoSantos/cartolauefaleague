@@ -82,7 +82,7 @@
                         </ul>
                     </li>
                     <li>
-                        <a href="blank-page.html"><i class="fa fa-fw fa-file"></i> Adcionar Pontuação</a>
+                        <a href="<?php echo base_url('index.php/Pontuacao') ?>"><i class="fa fa-fw fa-file"></i> Adcionar Pontuação</a>
                     </li>
                     <li>
                         <a href="blank-page.html"><i class="fa fa-fw fa-user"></i> Usuários</a>

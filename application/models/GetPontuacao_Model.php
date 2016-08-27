@@ -41,10 +41,56 @@ class GetPontuacao_Model extends CI_Model {
 							T.nomeTime,
 							T.nomeUser,
 							T.foto,
-							P.pontuacao
+							SUM(P.pontuacao) AS pontuacao
 					FROM '.$this->getTable().' P
 					INNER JOIN tbltimes T ON T.idTime = P.idTime
-					WHERE indTipo = "A"
+					GROUP BY T.idtime
+					ORDER BY P.pontuacao DESC';
+
+		$objResult = $this->db->query($strSQL);
+
+		return $objResult->result();
+	}
+
+	/**
+	* Gera classificação mensal
+	*
+	*/
+	public function getClassificacaoMensal() {
+
+		$strSQL = '
+					SELECT  T.idTime,
+							T.nomeTime,
+							T.nomeUser,
+							T.foto,
+							SUM(P.pontuacao) AS pontuacao
+					FROM '.$this->getTable().' P
+					INNER JOIN tbltimes T ON T.idTime = P.idTime
+					WHERE DATE_FORMAT(P.mesPontuacao, "%m") = DATE_FORMAT(NOW(), "%m")
+					GROUP BY T.idtime
+					ORDER BY P.pontuacao DESC';
+
+		$objResult = $this->db->query($strSQL);
+
+		return $objResult->result();
+	}
+
+	/**
+	* Gera classificação Rodada
+	*
+	*/
+	public function getClassificacaoRodada() {
+
+		$strSQL = '
+					SELECT  T.idTime,
+							T.nomeTime,
+							T.nomeUser,
+							T.foto,
+							SUM(P.pontuacao) AS pontuacao,
+							MAX(P.mesPontuacao)
+					FROM '.$this->getTable().' P
+					INNER JOIN tbltimes T ON T.idTime = P.idTime
+					GROUP BY T.idtime
 					ORDER BY P.pontuacao DESC';
 
 		$objResult = $this->db->query($strSQL);
