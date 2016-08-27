@@ -44,6 +44,8 @@ class GetPontuacao_Model extends CI_Model {
 							SUM(P.pontuacao) AS pontuacao
 					FROM '.$this->getTable().' P
 					INNER JOIN tbltimes T ON T.idTime = P.idTime
+					WHERE P.indTipo <> "M"
+					AND T.tipoInscricao <> "M"
 					GROUP BY T.idtime
 					ORDER BY P.pontuacao DESC';
 
@@ -67,6 +69,8 @@ class GetPontuacao_Model extends CI_Model {
 					FROM '.$this->getTable().' P
 					INNER JOIN tbltimes T ON T.idTime = P.idTime
 					WHERE DATE_FORMAT(P.mesPontuacao, "%m") = DATE_FORMAT(NOW(), "%m")
+					AND P.indTipo <> "A"
+					AND T.tipoInscricao <> "A"
 					GROUP BY T.idtime
 					ORDER BY P.pontuacao DESC';
 
@@ -90,6 +94,7 @@ class GetPontuacao_Model extends CI_Model {
 							MAX(P.mesPontuacao)
 					FROM '.$this->getTable().' P
 					INNER JOIN tbltimes T ON T.idTime = P.idTime
+					WHERE P.indTipo = "R"
 					GROUP BY T.idtime
 					ORDER BY P.pontuacao DESC';
 
