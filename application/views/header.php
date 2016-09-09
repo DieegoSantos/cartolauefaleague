@@ -13,7 +13,7 @@
     <!-- Custom CSS -->
     <link href="<?php echo base_url('css/sb-admin.css')?>" rel="stylesheet">
     <!-- Morris Charts CSS -->
-    <link href="<?php echo base_url('css/plugins/morris.css')?>" rel="stylesheet">
+    <!--link href="<?php echo base_url('css/plugins/morris.css')?>" rel="stylesheet"-->
     <!-- Custom Fonts -->
     <link href="<?php echo base_url('font-awesome/css/font-awesome.min.css')?>" rel="stylesheet" type="text/css">
 
@@ -64,7 +64,7 @@
                         <a href="<?php echo base_url('index.php/Times/listaTimes')?>"><i class="fa fa-fw fa-dashboard"></i> Times</a>
                     </li>
                     <li>
-                        <a href="#"><i class="fa fa-fw fa-money"></i> Pagamentos</a>
+                        <a href="<?php echo base_url('index.php/Pagamentos') ?>"><i class="fa fa-fw fa-money"></i> Pagamentos</a>
                     </li>
                     <li>
                         <a href="javascript:;" data-toggle="collapse" data-target="#demo"><i class="fa fa-fw fa-table"></i> Classificações <i class="fa fa-fw fa-caret-down"></i></a>
