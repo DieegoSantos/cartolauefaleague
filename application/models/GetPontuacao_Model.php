@@ -90,12 +90,14 @@ class GetPontuacao_Model extends CI_Model {
 							T.nomeTime,
 							T.nomeUser,
 							T.foto,
-							SUM(P.pontuacao) AS pontuacao,
-							MAX(P.mesPontuacao)
+							P.pontuacao
 					FROM '.$this->getTable().' P
 					INNER JOIN tbltimes T ON T.idTime = P.idTime
-					WHERE P.indTipo = "R"
-					GROUP BY T.idtime
+					WHERE P.indTipo =  "R"
+					AND mesPontuacao = ( 
+						SELECT MAX( mesPontuacao
+					) 
+					FROM tblpontuacao ) 
 					ORDER BY P.pontuacao DESC';
 
 		$objResult = $this->db->query($strSQL);
