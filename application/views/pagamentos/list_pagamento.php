@@ -75,6 +75,9 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                                             <td><?php echo $objResult->mesReferencia ?></td>
                                         </tr>
                                     <?php endforeach; ?>
+                                        <tr>
+                                            <td colspan="5"><a href="<?php echo base_url('index.php/Pagamentos/addPagamento') ?>" class="btn btn-primary">Novo Pagamento</a></td>
+                                        </tr>
                                     </tbody>
                                 </table>
                             </div>                           
