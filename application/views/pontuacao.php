@@ -31,7 +31,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                                                 <td><img src="<?php echo $objResult->foto ?>" width="30" /><?php echo $objResult->nomeTime ?></td>
                                                 <td><?php echo $objResult->nomeUser ?></td>
                                                 <td>
-                                                    <input required type="text" name="pontuacao[<?php echo $objResult->idTime ?>][]" class="form-control" size="3">
+                                                    <input required type="text" name="pontuacao[<?php echo $objResult->idTime ?>][]" class="form-control mask" size="3">
                                                 </td>
                                             </tr>
                                         <?php endforeach; ?>
@@ -53,5 +53,10 @@ defined('BASEPATH') OR exit('No direct script access allowed');
     <!-- /#page-wrapper -->
 </div>
 <!-- /#wrapper -->
+<script type="text/javascript">    
+    $(document).ready(function() {
+        $('.mask').mask('000.00', {reverse: true});
+    })
+</script>
 </body>
 </html>
