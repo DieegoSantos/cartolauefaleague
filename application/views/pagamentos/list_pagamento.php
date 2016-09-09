@@ -19,7 +19,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                     <form method="get" action="<?php echo base_url('index.php/Pagamentos') ?>">
                         <table class="table" style="margin-bottom:20px;">
                             <tr>
-                                <td valign="middle">Exibir Pagamento :</td>
+                                <td valign="middle">Exibir Pagamento:</td>
                                 <td align="left">
                                     <select name="TIPO_PGTO" class="form-control">
                                         <option value=""><< Todos >></option>
@@ -28,7 +28,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                                     </select>
                                 </td>
 
-                                <td align="right">Mês Vigênte :</td>
+                                <td align="right">Mês Vigênte:</td>
                                 <td>
                                     <select name="MES_REF" class="form-control">
                                         <option value=""><< Selecione >></option>

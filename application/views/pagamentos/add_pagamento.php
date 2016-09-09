@@ -12,7 +12,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                             <select required autofocus name="ID_TIME" type="text" class="form-control" id="inputEmail" placeholder="Nome do Time">
                             <option value=""><< Selecione >></option>
                             <?php foreach ($objDados as $objResult): ?>
-                            <option value="<?php echo $objResult->idTime?>"><?php echo $objResult->nomeTime ?></option>
+                            <option value="<?php echo $objResult->idTime?>"><?php echo $objResult->nomeTime. ' - ' . $objResult->nomeUser ?></option>
                             <?php endforeach; ?>
                             </select>
                         </fieldset>

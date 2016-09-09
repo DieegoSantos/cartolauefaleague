@@ -38,7 +38,7 @@ class Pagamentos extends MY_Controller {
 		$arrInsert['mesReferencia'] = $strMesRef;
 		$arrInsert['datPagamento'] = $strDataPagamento;
 
-		$this->db->insert('tblPagamentos', $arrInsert);
+		$this->db->insert('tblpagamentos', $arrInsert);
 
 		$this->session->set_flashdata('sucesso','Pagamento registrado com sucesso');
 		redirect(base_url('index.php/Pagamentos'));
