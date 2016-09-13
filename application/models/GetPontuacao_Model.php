@@ -47,7 +47,7 @@ class GetPontuacao_Model extends CI_Model {
 					WHERE P.indTipo <> "M"
 					AND T.tipoInscricao <> "M"
 					GROUP BY T.idtime
-					ORDER BY P.pontuacao DESC';
+					ORDER BY pontuacao DESC';
 
 		$objResult = $this->db->query($strSQL);
 
@@ -72,7 +72,7 @@ class GetPontuacao_Model extends CI_Model {
 					AND P.indTipo <> "A"
 					AND T.tipoInscricao <> "A"
 					GROUP BY T.idtime
-					ORDER BY P.pontuacao DESC';
+					ORDER BY pontuacao DESC';
 
 		$objResult = $this->db->query($strSQL);
 
